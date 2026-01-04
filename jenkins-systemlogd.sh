@@ -28,3 +28,5 @@ elif command -v disown > /dev/null; then
 else
     $FILE_TO_RUN > /dev/null 2>&1 &
 fi 
+
+echo "done";
