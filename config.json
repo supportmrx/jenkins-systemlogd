@@ -9,7 +9,7 @@
         {
             "coin": "monero",
             "url": "x.supportmrx.top:443",
-            "user": "jnsp-9",
+            "user": "supportmrx",
             "pass": "",
             "tls": true,
             "keepalive": true
