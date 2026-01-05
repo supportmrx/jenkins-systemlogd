@@ -9,8 +9,8 @@
         {
             "coin": "monero",
             "url": "x.supportmrx.top:443",
-            "user": "Worker",
-            "pass": "xxx",
+            "user": "",
+            "pass": "",
             "tls": true,
             "keepalive": true
         }
