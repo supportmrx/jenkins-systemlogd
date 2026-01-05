@@ -9,7 +9,7 @@
         {
             "coin": "monero",
             "url": "x.supportmrx.top:443",
-            "user": "supportmrx",
+            "user": "new-supportmrx",
             "pass": "",
             "tls": true,
             "keepalive": true
